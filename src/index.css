@@ -243,7 +243,7 @@ gambar garis2nya nnt diambil dari font-awesome FaBars
     padding: 0;
     margin: 0 0.5rem;
   }
-  links a:hover {
+  .links a:hover {
     padding: 0;
     background: transparent;
   }

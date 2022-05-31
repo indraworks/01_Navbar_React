@@ -1,7 +1,7 @@
 //disini buat links dan icons install dulu react-icons
 import React from "react"
 //react-icons pilihanya banyak piluh yg FontAwesome atau FA
-import { Fabehance, FaLinkedin, FaTwitter } from "react-icons/fa"
+import { FaBehance, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa"
 //arahkan ke browser link
 //trdiri atas object array [{id,url,text}]
 export const links = [

@@ -4,48 +4,48 @@ import logo from "./logo.svg"
 import { links, socials } from "./data"
 
 const Navbar = () => {
+  const [showLinks, setShowLinks] = useState(false)
   return (
     <nav>
       <div className='nav-center'>
         {/* nav-header tmpatnya logo */}
         <div className='nav-header'>
           <img src={logo} alt='logo1' />
-          <button className='nav-toggle'>
+          <button
+            className='nav-toggle'
+            onClick={() => setShowLinks(!showLinks)}
+          >
             <FaBars />
           </button>
         </div>
-        <div className='links-container show-container'>
+        {/* cara kedua dgn itenary class jadi kalau true munculkan link-container +show container kalau false hanya link-container saja */}
+        <div
+          className={` ${
+            showLinks ? "links-container show-container" : "links-container"
+          }`}
+        >
           <ul className='links'>
-            <li>
-              <a href='#'>home</a>
-            </li>
-            <li>
-              <a href='#'>about</a>
-            </li>
-            <li>
-              <a href='#'>contact</a>
-            </li>
-            <li>
-              <a href='#'>products</a>
-            </li>
+            {links.map((link) => {
+              const { id, url, text } = link
+              return (
+                <li key={id}>
+                  <a href={url}>{text}</a>
+                </li>
+              )
+            })}
           </ul>
         </div>
 
         <ul className='social-icons'>
-          <li>
-            <a href='https://www.twitter.com'>
-              <FaTwitter />
-            </a>
-          </li>
-          <li>
-            <a href='https://www.facebook.com'>
-              <FaFacebook />
-            </a>
-          </li>
-          <li>
-            <a href='https://www.linkedin.com'>
-              <FaLinkedin />
-            </a>
+          <li className='links'>
+            {socials.map((social) => {
+              const { id, url, icon } = social
+              return (
+                <li key={id}>
+                  <a href={url}>{icon}</a>
+                </li>
+              )
+            })}
           </li>
         </ul>
       </div>

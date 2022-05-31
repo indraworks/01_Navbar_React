@@ -1,4 +1,10 @@
 1) disni icon menggunakan react-icons
+  btw utk icon2 yg dalam format bisa disave svg bisa di dapat di link berikut:
+  https://heroicons.com/ 
+  atau 
+  https://heroicons.dev/
+
+
 2) index.css trus utk siteup css copy globalnya 
     yg navbarnya kit atulis ulang 
 3) yg kita delete file :App.test.js
@@ -41,7 +47,7 @@ nah pada return(
          return(
              <li key={id}> 
                 <a href={url}>
-                  {text}
+                  {icon}
                 </a>
                 </li>
          )
@@ -50,5 +56,16 @@ nah pada return(
 )
 
 ////edmikain pembahasan utk link kedata jadi otomatis///
+
+///SIMPLE TOGGLE ///
+jadi gini sewaktu ini navbar di layr kecil akan muncul button 
+nah yg saat ini udah kluar cokum link listnya ,nah kita harus ubah 
+dimana kita buat click buttonya BARULAH si link columnya ini keluar 
+nah caranya gimana kita buat state 
+nah kan dlm kondisi false 
+const [showLinks,setShowLinks] = useState(false)
+
+nah pada bagian on button :
+
 
 
