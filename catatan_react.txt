@@ -1,0 +1,54 @@
+1) disni icon menggunakan react-icons
+2) index.css trus utk siteup css copy globalnya 
+    yg navbarnya kit atulis ulang 
+3) yg kita delete file :App.test.js
+                        App.css
+                       logo.svg setup-test dan reporWeb 
+
+4) buat data.js yg isinya berisi utk link dan logo arahkan ke browser ( alamat webpage ) kita
+ atau page kita 
+5) mmbuat Navbar.js 
+
+====jadi utk navbar isinya dari a link baik utk ke page maupun ke www. adress
+kita tulis manual misalkan kejadianya kita punya sidebar
+yg sama ada home about contact products yg sama dgn navbar
+nah kalau manual kita pasti akan buat 2 kli kita akan edit macam dibawah ini masing2 2x :
+
+             <li>
+              <a href='#'>home</a>
+            </li>
+nah apalagi kalau daranya bertambah kita add manual yg di navbar dan di sidebar utk itu perlu dibuat data terpisah trsndiri 
+sbb: export const link =[{id:'1',url:'/',text:'/home'},dst ....]
+nah tinggal diimprt saja data.js masuk ke Navbar.js
+import {links,social} from './data
+
+nah pada return( 
+    <div className="link-container show-container">
+     <ul className="links">
+      {links.map(link=> {
+          const {id,url,text} = link;
+          return(<li key={id}>
+             <a href={url}>{text}   </a>
+          
+           </li>)
+      })}
+     <ul>
+    </div>
+
+    <ul className="social-icons">
+     {socials.map((social)=> {
+         const {id,url,text} = social;
+         return(
+             <li key={id}> 
+                <a href={url}>
+                  {text}
+                </a>
+                </li>
+         )
+     })}
+     </ul>
+)
+
+////edmikain pembahasan utk link kedata jadi otomatis///
+
+
